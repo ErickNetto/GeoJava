@@ -24,11 +24,12 @@ public class Plano {
         System.out.println("(Leve em consideração as medidas em cm)");
         System.out.println("1.Área");
         System.out.println("2.Perímetro");
+        System.out.println("3.Comprimento");
         int areaOrP = ValidaInt();
         return areaOrP;
     }
     public static int AreaOrV(){
-        System.out.println("Você deseja calcular a área ou perímetro?");
+        System.out.println("Você deseja calcular a área ou volume?");
         System.out.println("(Leve em consideração as medidas em cm)");
         System.out.println("1.Área");
         System.out.println("2.Volume");
@@ -62,7 +63,6 @@ public class Plano {
                 Double resultP = a+b+c;
                 System.out.println("o perímetro do triângulo é: "+resultP+"cm");//aqui imprimimos na tela a variável result, que contém o resultado da conta
                 break;
-              
             default:
                 System.out.println("Escolha uma opção válida");
                 Triangulo();
@@ -83,7 +83,7 @@ public class Plano {
                 System.out.println("Qual o valor dos lados do triângulo? "); //aqui só imprime na tela a pergunta
                 Double ladoT = ValidaDouble();   
                 Double resultP = ladoT*3;
-                System.out.println("o perímetro do triângulo é: "+resultP+"cm");
+                System.out.println("O perímetro do triângulo é: "+resultP+"cm");
                 break;
             default:
             System.out.print("Escolha uma opção válida:");
@@ -129,12 +129,12 @@ public class Plano {
                 System.out.println("O valor da área é igual a "+altura*base+"cm²");
                 break;
             case 2:
-                System.out.println("Qual o valor dos segmentos do triângulo?"); //aqui só imprime na tela a pergunta
+                System.out.println("Qual o valor dos segmentos do paralelograma?"); //aqui só imprime na tela a pergunta
                 System.out.println("Valor de a: ");
                 Double a = ValidaDouble(); 
                 System.out.println("Valor de b: ");
                 Double b = ValidaDouble();
-                Double resultParalelogramo = 2*a*b;
+                Double resultParalelogramo = 2*a+2*b;
                 System.out.println("O perímetro do Paralelogramo é: "+resultParalelogramo+"cm");
                 break;
             default:
@@ -151,7 +151,7 @@ public class Plano {
                 Double Diamaior = ValidaDouble();
                 System.out.print("Qual o valor do diâmetro menor? ");
                 Double Diamenor = ValidaDouble();
-                System.out.println("O valor da Área deste Losang é "+((Diamaior*Diamenor)/2)+"cm²");
+                System.out.println("O valor da Área deste Losango é "+((Diamaior*Diamenor)/2)+"cm²");
                 break;
             case 2:
                 System.out.println("Qual o número de lados?");
@@ -164,28 +164,49 @@ public class Plano {
                 break;
         }
     }
-    public void Trapezio(){
+    public static void Trapezio(){
         int areaOrP = AreaOrP();
         switch (areaOrP) {
             case 1:
-                
+            System.out.print("Qual o valor do segmento da base do trapézio(B)? ");
+            Double baseB = ValidaDouble();
+            System.out.print("Qual o valor do segmento de reta superior do trapézio(b)? ");
+            Double baseb = ValidaDouble();
+            System.out.print("Qual o valor da altura do trapezio? ");
+            Double alturaTrapezio = ValidaDouble();
+            System.out.println("O valor da Área deste traézio é "+((baseB+baseb)*alturaTrapezio/2)+"cm²");
                 break;
             case 2:
-
+            System.out.print("Qual o valor do segmento da base do trapézio(B)? ");
+            Double ladoB = ValidaDouble();
+            System.out.print("Qual o valor do segmento de reta superior  do trapézio(b)? ");
+            Double ladob = ValidaDouble();
+            System.out.print("Qual o valor do lado do trapezio? ");
+            Double ladoc = ValidaDouble();
+            System.out.print("Qual o valor do outro lado do trapezio? ");
+            Double ladod = ValidaDouble();
+            System.out.println("O valor do perímetro deste traézio é "+ladoc+ladoB+ladob+ladod+"cm");
                 break;
             default:System.out.print("Escolha uma opção válida:");
             Trapezio();
                 break;
         }
     }
-    public void Circulo(){
+    public static void Circulo(){
         int areaOrP = AreaOrP();
         switch (areaOrP) {
             case 1:
-                
+            System.out.print("Qual o raio do circulo? ");
+            Double raioCirculo = ValidaDouble();
+            System.out.println("A área deste circulo é "+(raioCirculo*raioCirculo)+"cm²");
                 break;
-            case 2:
-
+            case 2: System.out.print("a opção de calculo de perimetro do circulo não está disponivel, sinto muito");
+                Circulo();
+                break;
+            case 3:
+            System.out.print("Qual o raio do circulo? ");
+            Double raioCirculo2 = ValidaDouble();
+            System.out.println("O comprimento deste circulo é "+(raioCirculo2*2)+"cm");
                 break;
             default:System.out.print("Escolha uma opção válida:");
             Circulo();

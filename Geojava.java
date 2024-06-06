@@ -28,7 +28,6 @@ public class Geojava extends Espacial {//cria a classe principal
         System.out.println("1.Plana");
         System.out.println("2.Espacial");
         System.out.println("0.Sair");
-        
     }
     public static void Plana(){
         
@@ -40,7 +39,7 @@ public class Geojava extends Espacial {//cria a classe principal
         System.out.println("5.Retângulo");
         System.out.println("6.Trapézio");
         System.out.println("0.Sair");
-        System.out.print("Escolha a forma geométrica desejada:");
+        System.out.print("Escolha a forma geométrica desejada: ");
         int opcao = ValidaInt();
         ValidaSair(opcao);
         switch(opcao){
@@ -48,19 +47,18 @@ public class Geojava extends Espacial {//cria a classe principal
             break;
             case 2:Retangulo();
             break;
-            //case 3:Circulo();
-            //break;
+            case 3:Circulo();
+            break;
             case 4:Losango();
             break;
             case 5:Retangulo();
             break;
-            //case 6:Trapezio();
-            //break;
+            case 6:Trapezio();
+            break;
             default:System.out.println("Escolha uma opção válida");
             Plana();
             break;
         }
-
     }
     public static void Espacial(){
         
